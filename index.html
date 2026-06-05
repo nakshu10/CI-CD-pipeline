@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello World</title>
+    <!-- Google Fonts for Bold Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@800&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Smooth Background Setup */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: radial-gradient(circle at 0% 0%, #1a103c 0%, #0b061f 100%);
+            font-family: 'Poppins', sans-serif;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Decorative Background Glows */
+        body::before, body::after {
+            content: '';
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            filter: blur(120px);
+            z-index: 0;
+            opacity: 0.5;
+        }
+
+        body::before {
+            background: #ff007f;
+            top: 15%;
+            left: 20%;
+            animation: floatGlow 8s ease-in-out infinite alternate;
+        }
+
+        body::after {
+            background: #00f2fe;
+            bottom: 15%;
+            right: 20%;
+            animation: floatGlow 12s ease-in-out infinite alternate-reverse;
+        }
+
+        /* Premium Multi-Color Card */
+        .premium-card {
+            position: relative;
+            z-index: 1;
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            padding: 60px 80px;
+            border-radius: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5),
+                        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+            text-align: center;
+            transform: translateY(0px);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* Card Hover Effect */
+        .premium-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            border-color: rgba(255, 255, 255, 0.25);
+            box-shadow: 0 35px 60px -10px rgba(0, 0, 0, 0.7),
+                        0 0 40px rgba(0, 242, 254, 0.15),
+                        0 0 40px rgba(255, 0, 127, 0.15);
+        }
+
+        /* Big, Bold Multi-Color Gradient Text */
+        .hello-text {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 5.5rem; /* Ultra Big Size */
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: -2px;
+            background: linear-gradient(135deg, #00f2fe 0%, #4facfe 25%, #0000fe 50%, #ff007f 75%, #ff758c 100%);
+            background-size: 400% 400%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradientShift 8s ease infinite, textPulse 3s ease-in-out infinite alternate;
+            margin-bottom: 10px;
+        }
+
+        /* Elegant Subtext */
+        .sub-text {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 1.1rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            font-weight: 600;
+            margin-top: 15px;
+        }
+
+        /* Premium Badge inside Card */
+        .badge {
+            display: inline-block;
+            padding: 8px 16px;
+            background: rgba(255, 255, 255, 0.07);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 50px;
+            color: #00f2fe;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Animations */
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        @keyframes textPulse {
+            0% { filter: drop-shadow(0 0 2px rgba(0,242,254,0.3)); }
+            100% { filter: drop-shadow(0 0 25px rgba(255,0,127,0.6)); }
+        }
+
+        @keyframes floatGlow {
+            0% { transform: translate(0, 0) scale(1); }
+            100% { transform: translate(50px, 30px) scale(1.2); }
+        }
+
+        /* Responsive Design for smaller screens */
+        @media (max-width: 768px) {
+            .premium-card {
+                padding: 40px 30px;
+                width: 90%;
+            }
+            .hello-text {
+                font-size: 3.2rem;
+            }
+            .sub-text {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Main Premium Card Container -->
+    <div class="premium-card">
+        <!-- Accent Badge -->
+        <div class="badge">Welcome Experience</div>
+        
+        <!-- Big Multi-Color Text -->
+        <h1 class="hello-text">Hello World</h1>
+        
+        <!-- Minimal Subtext -->
+        <p class="sub-text">Designed to Inspire</p>
+    </div>
+
+</body>
+</html>
